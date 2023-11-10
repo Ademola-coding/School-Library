@@ -1,3 +1,5 @@
+require './decorator'
+
 class Person
   attr_accessor :name, :age, :id
 
