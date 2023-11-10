@@ -9,9 +9,7 @@ class Student < Person
   end
 
   def play_hooky
-    # rubocop:disable RuleByName
-    "¯\(ツ)/¯"
-    # rubocop:disable RuleByName
+    '¯(ツ)/¯'
   end
 
   def classrooms(classroom)
