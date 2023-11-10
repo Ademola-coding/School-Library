@@ -24,9 +24,9 @@
 <!-- PROJECT DESCRIPTION -->
 A school library built with ruby
 
-# 📖 [school library] <a name="about-project"></a>
+# 📖 [school-library] <a name="about-project"></a>
 
-**[school library]** A school library built with ruby
+**[school-library]** A school library built with ruby
 
 ## 🛠 Built With <a name="built-with"> Ruby</a>
 
@@ -66,8 +66,8 @@ Postgres Installed
 Clone this repository to your desired folder:
 
 ```sh
-  mkdir school library
-  cd school library
+  mkdir school-library
+  cd school-library
   git clone git@github.com:Ademola-coding/school-library.git
 ```
 
@@ -108,34 +108,22 @@ No tests here
 
 <!-- CONTRIBUTING -->
 
-## 🤝 Contributing <a name="contributing"></a>
+## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Show your support
 
-<!-- SUPPORT -->
+Give a ⭐️ if you like this project!
 
-## ⭐️ Show your support <a name="support"></a>
+## Acknowledgments
 
-If you like this project please show us support by givintg it a star.
+- Hat tip to anyone whose code was used
+- Inspiration
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## 📝 License
 
-<!-- ACKNOWLEDGEMENTS -->
+This project is [MIT](./LICENSE) licensed.
 
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-I would like to thank my colleagues at Microverse for their support during the project.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## 📝 License <a name="license"></a>
-
-This project is [MIT](./MIT.md) licensed.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
