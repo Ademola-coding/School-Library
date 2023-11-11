@@ -1,0 +1,42 @@
+gem install bundler
+bundle config set --local path 
+'vendor/bundle' || bundle instal
+l --path vendor/bundle
+bundle install
+
+C:\Users\Owoeye 
+Olaoluwa\Documents\School-Library\.bundle
+C:\Users\Owoeye Olaol
+uwa\Documents\School-Library
+
+gem install rubocop
+
+ruby -v
+
+gem environment
+
+bundle exec rubocop
+
+gem install rubocob
+rubocop -v
+
+gem install rubocop
+
+gem update --system
+
+gem update --system
+ --install-dir
+ C:\Users\Owoeye\Doc
+ uments\School-Library
+export PATH=$HOME/.gem/r
+uby/3.1.0/bin:$PATH
+gem install rubocop -i 
+C:\Users\Owoeye Olao
+luwa\Documents\School-Library
+
+rubocop --auto-correct
+
+rubocop
+
+bundle exec rubocop
+bundle exec rubocop --safe-auto-correct
