@@ -11,9 +11,9 @@ class Book
   end
 
 
- # def add_rental(person, _date)
- #  @rentals.push(person)
- #  person.rentals = self 
+  # def add_rental(person, _date)
+  #  @rentals.push(person)
+  #  person.rentals = self
 
   def add_rental(date, person)
     rental = Rental.new(date, person, self)
