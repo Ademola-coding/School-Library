@@ -1,12 +1,12 @@
-require '../classes/student'
-require '../classes/teacher'
-require '../classes/book'
-require '../classes/rental'
+require './student'
+require './teacher'
+require './book'
+require './rental'
 require 'json'
 
 module DataPreserver
   def load_peoble
-    file = '../data/people.json'
+    file = 'people.json'
     data = []
     if File.exist?(file) && File.empty?(file)
       JSON.parse(File.read(file)).each do |element|
@@ -23,7 +23,7 @@ module DataPreserver
   end
 
   def load_books
-    file = '../data/books.json'
+    file = 'books.json'
     data = []
     if File.exist?(file) && File.empty?(file)
       JSON.parse(File.read(file)).each do |element|
@@ -42,7 +42,7 @@ module DataPreserver
   end
 
   def load_rentals
-    file = '../data/rentals.json'
+    file = 'rentals.json'
     data = []
     if File.exist?(file) && File.empty?(file)
       JSON.parse(File.read(file)).each do |element|
@@ -66,7 +66,7 @@ module DataPreserver
                     parent_permission: person.parent_permission, data_type: person.class })
       end
     end
-    File.write('../data/people.json', JSON.generate(data))
+    File.write('people.json', JSON.generate(data))
   end
 
   def save_books
@@ -74,7 +74,7 @@ module DataPreserver
     @books.each do |book|
       data.push({ title: book.title, author: book.author })
     end
-    File.write('../data/books.json', JSON.generate(data))
+    File.write('books.json', JSON.generate(data))
   end
 
   def save_rental
@@ -82,6 +82,6 @@ module DataPreserver
     @rentals.each do |rental|
       data.push({ date: rental.date, book_title: rental.book.title, person_id: rental.person.id })
     end
-    File.write('../data/rentals.json', JSON.generate(data))
+    File.write('rentals.json', JSON.generate(data))
   end
 end

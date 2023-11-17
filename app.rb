@@ -1,10 +1,9 @@
-require './classes/person'
-require './classes/student'
-require './classes/teacher'
-require './classes/book'
-require './classes/rental'
-require './modules/data_preserver'
-require './classes/input'
+require './student'
+require './teacher'
+require './book'
+require './rental'
+require './data_preserver'
+require './input'
 
 class App
   include DataPreserver
