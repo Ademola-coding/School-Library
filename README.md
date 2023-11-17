@@ -95,6 +95,11 @@ No tests here
 - Twitter: [@devAdemolaOfNig](https://twitter.com/devAdemolaOfNig)
 - LinkedIn: [Ademola Owoeye](https://www.linkedin.com/in/ademola-owoeye/)
 
+👤 **Author 2**
+
+- GitHub: [Ademola-coding](https://github.com/fmanimashaun)
+- Twitter: [@devAdemolaOfNig](https://twitter.com/fmanimashaun)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
