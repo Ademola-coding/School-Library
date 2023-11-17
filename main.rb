@@ -1,6 +1,6 @@
 require './app'
-require './input'
-require './data_preserver'
+require './classes/input'
+require './modules/data_preserver'
 
 class Main
   def initialize
