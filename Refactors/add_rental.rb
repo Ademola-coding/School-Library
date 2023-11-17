@@ -1,6 +1,6 @@
 def add_rental(app)
-  puts 'Books is empity ' if app.books.empty?
-  puts 'Person is empity' if app.list_persons.empty?
+  puts 'Books is empity ' if app.books.length.zero?
+  puts 'Person is empity' if app.list_persons.length.zero?
   puts 'Select a book from the following list by number: '
   app.list_books.each_with_index do |book, index|
     puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
