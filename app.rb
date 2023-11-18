@@ -27,7 +27,6 @@ class App # rubocop:disable Metrics/ClassLength
     if @people.empty?
       puts 'List empty'
       puts 'Create a person'
-      run
     else
       puts "people list (#{@people.count})"
 
@@ -35,7 +34,6 @@ class App # rubocop:disable Metrics/ClassLength
         puts "#{index + 1} Person type: #{person['type']} person name: #{person['name']}, person id: #{person['id']}"
       end
       puts ''
-      run
     end
   end
 
