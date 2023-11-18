@@ -1,0 +1,42 @@
+[
+  {
+    "name": "fsd",
+    "type": "Student",
+    "age": "a",
+    "classroom": 32,
+    "id": 2
+  },
+  {
+    "name": "erik",
+    "type": "Teacher",
+    "age": "teacher",
+    "id": 1
+  },
+  {
+    "name": "Omachi",
+    "type": "Teacher",
+    "age": "teacher",
+    "id": 3
+  },
+  {
+    "name": "Erik",
+    "type": "Student",
+    "age": "A",
+    "classroom": 23,
+    "id": 4
+  },
+  {
+    "name": "Omachi",
+    "type": "Student",
+    "age": "B",
+    "classroom": 25,
+    "id": 40
+  },
+  {
+    "name": "andf",
+    "type": "Student",
+    "age": "A",
+    "classroom": 45,
+    "id": 10
+  }
+]

@@ -1,20 +1,20 @@
-require './person'
-require './classroom'
+require_relative './person'
 
 class Student < Person
-  attr_reader :classroom
+  attr_accessor :type, :classroom
 
-  def initialize(age:, name: 'Unknown', parent_permission: true, classroom: nil, id: nil)
-    super(id: id, age: age, name: name, parent_permission: parent_permission)
+  def initialize(age, classroom, name: 'Unknown', type: 'Student', parent_permission: true)
+    super(age, name, parent_permission: parent_permission)
     @classroom = classroom
+    @type = type
   end
 
-  def play_hooky
-    '¯\(ツ)/¯'
+  def play_hookey
+    '¯(ツ)/¯'
   end
 
-  def join_classroom(value)
-    @classroom = value
-    value.students.push(self) unless value.students.include?(self)
-  end
+  # def classroom(classes)
+  #   @classroom = classes
+  #   classes.students.push(self) unless classes.students.include(self)
+  # end
 end
