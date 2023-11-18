@@ -1,7 +1,7 @@
-require '../classes/student'
-require '../classes/classroom'
-require '../classes/book'
-require '../classes/rental'
+require_relative '../classes/student'
+require_relative '../classes/classroom'
+require_relative '../classes/book'
+require_relative '../classes/rental'
 require 'json'
 
 classroom = Classroom.new('A')
