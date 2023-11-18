@@ -89,16 +89,17 @@ No tests here
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author**
+👤 **Ademola Owoeye**
 
 - GitHub: [Ademola-coding](https://github.com/Ademola-coding)
 - Twitter: [@devAdemolaOfNig](https://twitter.com/devAdemolaOfNig)
 - LinkedIn: [Ademola Owoeye](https://www.linkedin.com/in/ademola-owoeye/)
 
-👤 **Author 2**
+👤 **Fisayo Michael Animashaun**
 
-- GitHub: [Ademola-coding](https://github.com/fmanimashaun)
-- Twitter: [@devAdemolaOfNig](https://twitter.com/fmanimashaun)
+- GitHub: [@fmanimashaun](https://github.com/fmanimashaun)
+- Twitter: [@fmanimashaun](https://twitter.com/fmanimashaun)
+- LinkedIn: [Fisayo Michael Animashaun ](https://linkedin.com/in/fmanimashaun)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
