@@ -1,6 +1,6 @@
-require_relative '../person'
-require_relative '../book'
-require_relative '../rental'
+require_relative '../classes/person'
+require_relative '../classes/book'
+require_relative '../classes/rental'
 
 describe 'Test rental class implementation' do
   before(:each) do

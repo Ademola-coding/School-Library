@@ -1,4 +1,4 @@
-require_relative '../person'
+require_relative '../classes/person'
 
 person = Person.new(25, 'Andy')
 

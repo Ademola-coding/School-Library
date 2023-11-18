@@ -1,4 +1,4 @@
-require_relative '../student'
+require_relative '../classes/student'
 
 student = Student.new(25, 'A')
 

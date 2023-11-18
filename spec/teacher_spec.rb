@@ -1,4 +1,4 @@
-require_relative '../teacher'
+require_relative '../classes/teacher'
 
 teacher = Teacher.new(25, 'English')
 

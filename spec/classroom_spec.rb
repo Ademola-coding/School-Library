@@ -1,7 +1,7 @@
-require './student'
-require './classroom'
-require './book'
-require './rental'
+require '../classes/student'
+require '../classes/classroom'
+require '../classes/book'
+require '../classes/rental'
 require 'json'
 
 classroom = Classroom.new('A')
