@@ -1,11 +1,11 @@
 require 'json'
 require './database'
 require './database_read'
-require_relative 'student'
-require_relative 'teacher'
-require_relative 'classroom'
-require_relative 'book'
-require_relative 'rental'
+require_relative './student'
+require_relative './teacher'
+require_relative './classroom'
+require_relative './book'
+require_relative './rental'
 
 class App # rubocop:disable Metrics/ClassLength
   attr_accessor :book, :people, :rentals
