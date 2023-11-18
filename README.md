@@ -89,7 +89,7 @@ No tests here
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author**
+👤 **Ademola Owoeye**
 
 - GitHub: [Ademola-coding](https://github.com/Ademola-coding)
 - Twitter: [@devAdemolaOfNig](https://twitter.com/devAdemolaOfNig)
