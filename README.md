@@ -33,9 +33,9 @@ A school library built with ruby
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-<summary>Database</summary>
+<summary>Server</summary>
   <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://ruby-doc.org/">Ruby</a></li>
   </ul>
 </details>
 
@@ -94,6 +94,11 @@ No tests here
 - GitHub: [Ademola-coding](https://github.com/Ademola-coding)
 - Twitter: [@devAdemolaOfNig](https://twitter.com/devAdemolaOfNig)
 - LinkedIn: [Ademola Owoeye](https://www.linkedin.com/in/ademola-owoeye/)
+
+👤 **Author 2**
+
+- GitHub: [Ademola-coding](https://github.com/fmanimashaun)
+- Twitter: [@devAdemolaOfNig](https://twitter.com/fmanimashaun)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

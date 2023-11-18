@@ -1,59 +1,198 @@
-require './classroom'
-require './student'
-require './teacher'
-require './book'
-require './rental'
+require 'json'
+require './database'
+require './database_read'
+require_relative 'student'
+require_relative 'teacher'
+require_relative 'classroom'
+require_relative 'book'
+require_relative 'rental'
 
-class App
-  attr_accessor :persons, :books, :rentals
+class App # rubocop:disable Metrics/ClassLength
+  attr_accessor :book, :people, :rentals
+
+  include Database
+  include ReadDatabase
 
   def initialize
-    @persons = []
-    @books = []
-    @rentals = []
-    @classroom = Classroom.new('Class A')
+    @books = read_book
+    @people = read_person
+    @rentals = read_rentals
   end
 
-  def create_new_student(age, name, parent_permission)
-    student = Student.new(@classroom, age, name, parent_permission: parent_permission)
-    @persons << student
-    puts 'Student created successfuly'
+  def run
+    action_prompt
   end
 
-  def create_teacher(specialization, age, name)
-    teacher = Teacher.new(specialization, age, name)
-    @persons << teacher
-    puts 'Teacher Created Successfuly'
-  end
+  def display_all_people
+    if @people.empty?
+      puts 'List empty'
+      puts 'Create a person'
+      run
+    else
+      puts "people list (#{@people.count})"
 
-  def create_book(title, author)
-    book = Book.new(title, author)
-    @books << book
-    puts 'Book Creted Successfuly'
-  end
-
-  def create_rental(date, person, book)
-    rental = Rental.new(date, person, book)
-    @rentals << rental
-    puts 'Rental Created Successfuly'
-  end
-
-  def list_books
-    puts 'No book lists found!' if @books.empty?
-    @books.each { |book| puts "Book Title: \"#{book.title}\", Book Author: #{book.author}" }
-  end
-
-  def list_persons
-    puts 'No person lists found' if @persons.empty?
-    @persons.each do |person|
-      puts "[#{person.class}] Name: #{person.name}, Age: #{person.age}, Id: #{person.id} "
+      @people.each_with_index do |person, index|
+        puts "#{index + 1} Person type: #{person['type']} person name: #{person['name']}, person id: #{person['id']}"
+      end
+      puts ''
     end
   end
 
-  def display_rentals_by_person_id(person_id)
-    person_rentals = @rentals.select { |rental| rental.person.id == person_id }
-    person_rentals.each do |rental|
-      puts " Book: #{rental.book.title}, Writen By: #{rental.book.author}, Date: #{rental.date}"
+  # Creating a student or teacher and listing them
+  def create_a_person
+    puts 'Do you want to create a teacher or a student'
+    puts
+    puts 'Select 1 to create a Student'
+    puts 'Select 2 to create a Teacher'
+
+    choice = gets.chomp.to_i
+    case choice
+    when 1
+      create_a_student
+    when 2
+      create_a_teacher
+    else
+      puts 'Select a valid option between 1 and 2'
+      create_a_person
     end
+  end
+
+  def create_a_student
+    puts 'Age'
+    age = gets.chomp.to_i
+
+    puts 'classroom: (A or B)'
+    classroom = gets.chomp
+
+    puts 'Name'
+    name = gets.chomp
+    has_permission = permit?
+
+    new_student = Student.new(classroom, age, name: name, parent_permission: has_permission)
+    @people << {
+      name: new_student.name,
+      type: new_student.type,
+      age: new_student.age,
+      classroom: new_student.classroom,
+      id: new_student.id
+    }
+
+    write_person(@people)
+    puts "Student #{name} with age #{age} and classroom #{classroom.upcase}, was created"
+
+    action_prompt
+  end
+
+  def create_a_teacher
+    puts 'Age'
+    age = gets.chomp.to_i
+
+    puts 'Specialization'
+    specialization = gets.chomp
+
+    puts 'Name'
+    name = gets.chomp
+
+    new_teacher = Teacher.new(specialization, age, name: name)
+    @people << {
+      name: new_teacher.name,
+      type: new_teacher.type,
+      age: new_teacher.age,
+      id: new_teacher.id
+    }
+    write_person(@people)
+    puts "Teacher #{name} with age #{age} and specialized in #{specialization}, was created"
+    action_prompt
+  end
+
+  def permit?
+    puts 'Have a parent permit ? [Y / N]'
+
+    permit = gets.chomp.upcase
+
+    case permit
+    when 'Y'
+      true
+    when 'N'
+      false
+    else
+      puts 'Invalid choice'
+      permit?
+    end
+  end
+
+  # Creating books and listing them
+  def display_all_books
+    if @books.empty?
+      puts 'Empty book list'
+      run
+    else
+      puts "book lists count (#{@books.count})"
+      @books.each_with_index do |book, index|
+        puts "#{index + 1} book title is: #{book['title']} written by: #{book['author']}"
+      end
+    end
+  end
+
+  def create_a_book
+    puts 'Book Author'
+    author = gets.chomp
+
+    puts 'Book Title'
+    title = gets.chomp
+
+    new_book = Book.new(title, author)
+    @books << {
+      title: new_book.title,
+      author: new_book.author
+    }
+    write_book(@books)
+    puts "Book #{title} written by #{author} was created"
+    action_prompt
+  end
+
+  # Creating Rentals
+  def list_all_rentals
+    puts 'Enter persons id'
+
+    person_id = gets.chomp.to_i
+
+    if !@people.find { |person| person['id'] == person_id }
+      puts 'No rentals found'
+    elsif @rentals.empty?
+      puts 'Empty Rental list'
+    else
+      puts "Rentals count(#{@people.count})"
+      @rentals.each do |rental|
+        if rental['index'] == person_id
+          puts "Date: #{rental['date']}, Book: '#{rental['title']}' by #{rental['author']}"
+        end
+      end
+    end
+  end
+
+  def create_a_rental
+    puts 'Select a book by an index'
+    display_all_books
+    run if @books.empty?
+    book_index = gets.chomp.to_i - 1
+
+    puts 'select a person below'
+    display_all_people
+    action_prompt if @people.empty?
+    person_index = gets.chomp.to_i - 1
+
+    puts 'Date [yyyy/mm/dd] : '
+    date = gets.chomp
+
+    new_rental = Rental.new(date, @people[person_index], @books[book_index])
+    @rentals << {
+      date: new_rental.date,
+      index: new_rental.person['id'],
+      books: new_rental.book['id']
+    }
+    write_rental(@rentals)
+    puts 'Rentals created successfully !'
+    run
   end
 end
