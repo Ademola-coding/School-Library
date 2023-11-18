@@ -1,42 +1,23 @@
 [
   {
-    "name": "fsd",
+    "name": "rsfd",
     "type": "Student",
     "age": "a",
-    "classroom": 32,
-    "id": 2
-  },
-  {
-    "name": "erik",
-    "type": "Teacher",
-    "age": "teacher",
-    "id": 1
-  },
-  {
-    "name": "Omachi",
-    "type": "Teacher",
-    "age": "teacher",
-    "id": 3
+    "classroom": 43,
+    "id": 25
   },
   {
     "name": "Erik",
     "type": "Student",
-    "age": "A",
-    "classroom": 23,
-    "id": 4
+    "age": "a",
+    "classroom": 32,
+    "id": 13
   },
   {
-    "name": "Omachi",
+    "name": "Lionel",
     "type": "Student",
-    "age": "B",
-    "classroom": 25,
-    "id": 40
-  },
-  {
-    "name": "andf",
-    "type": "Student",
-    "age": "A",
-    "classroom": 45,
-    "id": 10
+    "age": "a",
+    "classroom": 26,
+    "id": 38
   }
 ]

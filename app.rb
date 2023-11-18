@@ -1,6 +1,6 @@
 require 'json'
 require './database'
-require './read_database'
+require './database_read'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'classroom'
@@ -27,6 +27,7 @@ class App # rubocop:disable Metrics/ClassLength
     if @people.empty?
       puts 'List empty'
       puts 'Create a person'
+      run
     else
       puts "people list (#{@people.count})"
 
@@ -164,7 +165,7 @@ class App # rubocop:disable Metrics/ClassLength
       puts "Rentals count(#{@people.count})"
       @rentals.each do |rental|
         if rental['index'] == person_id
-          puts "Date: #{rental['date']}, Book: '#{rental['books']}' by #{rental.books.author}"
+          puts "Date: #{rental['date']}, Book: '#{rental['title']}' by #{rental['author']}"
         end
       end
     end
